@@ -8,16 +8,15 @@ def height(root):
 
     if root is None:
         return 0 
-    # Recursively call height of each node
-    leftAns = height(root.left)
+    leftAns = height(root.left) # Recursive function
     rightAns = height(root.right)
  
-    # Return max(leftHeight, rightHeight) at each iteration
     return max(leftAns, rightAns) + 1
  
-root = TreeNode(1)
-root.left = TreeNode(2)
+root = TreeNode(5)
+root.left = TreeNode(7)
 root.right = TreeNode(3)
 root.left.left = TreeNode(4)
+root.right.right = TreeNode(23)
  
-print("Height of the binary tree is: " + str(height(root)))
+print(f"Height of the binary tree is: {height(root)}")
